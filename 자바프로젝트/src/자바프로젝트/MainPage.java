@@ -10,7 +10,7 @@ public class MainPage extends JPanel implements ActionListener {
 	private Image back;
 	
 	//제목
-	ImageIcon title = new ImageIcon("/자바프로젝트/이미지파일/title.jpg");
+	ImageIcon title = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\title.jpg");
 	JLabel imageTitle = new JLabel(title); 
 	
 	//버튼 객체
@@ -25,7 +25,7 @@ public class MainPage extends JPanel implements ActionListener {
 	public MainPage()
 	{
 		//바탕화면
-		back=Toolkit.getDefaultToolkit().getImage("/자바프로젝트/이미지파일/white.jpg");
+		back=Toolkit.getDefaultToolkit().getImage("C:\\Users\\SIST\\Desktop\\프로젝트\\white.jpg");
 		
 		//사용자 정의 배치
 		setLayout(null); 

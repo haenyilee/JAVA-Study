@@ -6,26 +6,26 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MainButton extends JPanel{
-	ImageIcon nomalLoginIcon = new ImageIcon("/자바프로젝트/이미지파일/login1.jpg");
-	ImageIcon rolLoginIcon = new ImageIcon("/자바프로젝트/이미지파일/login2.jpg");
+	ImageIcon nomalLoginIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\login1.jpg");
+	ImageIcon rolLoginIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\login2.jpg");
 	
-	ImageIcon nomalJoinIcon = new ImageIcon("/자바프로젝트/이미지파일/join1.jpg");
-	ImageIcon rolJoinIcon = new ImageIcon("/자바프로젝트/이미지파일/join2.jpg");
+	ImageIcon nomalJoinIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\join1.jpg");
+	ImageIcon rolJoinIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\join2.jpg");
 	
-	ImageIcon nomalSerchIcon = new ImageIcon("/자바프로젝트/이미지파일/돋보기1.jpg");
-	ImageIcon rolSerchIcon = new ImageIcon("/자바프로젝트/이미지파일/돋보기2.jpg");
+	ImageIcon nomalSerchIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\돋보기1.jpg");
+	ImageIcon rolSerchIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\돋보기2.jpg");
 	
-	ImageIcon nomallistIcon = new ImageIcon("/자바프로젝트/이미지파일/영화.jpg");
-	ImageIcon rollistIcon = new ImageIcon("/자바프로젝트/이미지파일/영화1.jpg");
+	ImageIcon nomallistIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\영화.jpg");
+	ImageIcon rollistIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\영화1.jpg");
 	
-	ImageIcon nomalticketIcon = new ImageIcon("/자바프로젝트/이미지파일/예매.jpg");
-	ImageIcon rolticketIcon = new ImageIcon("/자바프로젝트/이미지파일/예매1.jpg");
+	ImageIcon nomalticketIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\예매.jpg");
+	ImageIcon rolticketIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\예매1.jpg");
 	
-	ImageIcon nomaleventIcon = new ImageIcon("/자바프로젝트/이미지파일/이벤트.jpg");
-	ImageIcon roleventIcon = new ImageIcon("/자바프로젝트/이미지파일/이벤트1.jpg");
+	ImageIcon nomaleventIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\이벤트.jpg");
+	ImageIcon roleventIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\이벤트1.jpg");
 	
-	ImageIcon nomalchatIcon = new ImageIcon("/자바프로젝트/이미지파일/채팅.jpg");
-	ImageIcon rolchatIcon = new ImageIcon("/자바프로젝트/이미지파일/채팅1.jpg");
+	ImageIcon nomalchatIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\채팅.jpg");
+	ImageIcon rolchatIcon = new ImageIcon("C:\\Users\\SIST\\Desktop\\프로젝트\\채팅1.jpg");
 	
 	
 	JButton login;

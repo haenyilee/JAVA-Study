@@ -1,8 +1,13 @@
 package 자바프로젝트;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
+
+import 자바프로젝트.예매.ReserveControll;
 
 import java.awt.*;
 
@@ -12,6 +17,7 @@ public class TicketForm extends JPanel{
    JLabel la1,la2,la3,la4,la5,la6,la7;
    JPanel pan1,pan2,pan3,pan4,pan5,pan6;
    JTextArea ta1,ta2,ta3,ta4;
+   
    
    public TicketForm(){
       
@@ -82,10 +88,8 @@ public class TicketForm extends JPanel{
       la5.setBounds(1130,340,400,50);
       la5.setBorder(BorderFactory.createLineBorder(Color.BLACK));
       
-     
-      la6=new JLabel("성인");
       
-      JPanel p= new JPanel();
+      la6=new JLabel("성인");
       
       num1=new JButton("0");
       num2=new JButton("1");
@@ -97,28 +101,36 @@ public class TicketForm extends JPanel{
       num8=new JButton("7");
       num9=new JButton("8");
       num10=new JButton("9");
+      
+      JPanel p= new JPanel();
+      p.add(num1);p.add(num2);p.add(num3);p.add(num4);p.add(num5);p.add(num6);p.add(num7);p.add(num8);p.add(num9);p.add(num10);
+      
    
+      
       la7=new JLabel("청소년");
       
       
       pan5= new JPanel();
+      
+      
+      pan5.add(la6);
+      //setLayout(null);
+      la6.setBounds(1150,395,100,55);
+      
+     
+      pan5.add(p);
+     //setLayout(null);
+      p.setBounds(1150, 450, 380, 60);
+      
+      pan5.add(la7);
+      // setLayout(null);
+      la7.setBounds(1150,515,100,55);
+    
+
       add(pan5);
       pan5.setLayout(null);
       pan5.setBounds(1130, 390, 400, 260);
       pan5.setBorder(BorderFactory.createLineBorder(Color.black));
-      
-      pan5.add(la6);
-      la6.setBounds(1150,395,100,55);
-      
-      p.add(num1);p.add(num2);p.add(num3);p.add(num4);p.add(num5);p.add(num6);p.add(num7);p.add(num8);p.add(num9);p.add(num10);
-      pan5.add(p);
-      setLayout(null);
-      p.setBounds(1150, 450, 380, 60);
-      
-      pan5.add(la7);
-      la7.setBounds(1150,515,100,55);
-    
-      
       
       
       
