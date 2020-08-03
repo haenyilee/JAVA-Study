@@ -147,19 +147,22 @@ public class DramaManager2 {
 		System.out.println(page+"page / "+d.dramaTotalPage()+" pages");
 		*/
 		
+		DramaManager2 d= new DramaManager2();
+		ArrayList<DramaVO> list = d.dramaListData(1);
 		
-		
+		/*
 		for(DramaVO vo:list)
 		{
 			System.out.println(
-//					vo.getTitle()
-//					+vo.getBroad()+
-//					vo.getCno()+
-//					vo.getDate()+
-//					vo.getGenre()+
-//					vo.getPoster()
+					vo.getTitle()
+					+vo.getBroad()+
+					vo.getCno()+
+					vo.getDate()+
+					vo.getGenre()+
+					vo.getPoster()
 					);
 		}
+		*/
 		
 	}
 

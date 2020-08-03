@@ -20,6 +20,9 @@ public class ControllPanel extends JPanel { // JFrame이 아니라 JPanel 상속
 	ClientMainFrame c;
 	NewsForm nf = new NewsForm();
 	
+	DramaListForm dlf= new DramaListForm();
+	
+	
 	
 	
 	public ControllPanel(ClientMainFrame c) {
@@ -32,6 +35,7 @@ public class ControllPanel extends JPanel { // JFrame이 아니라 JPanel 상속
 		add("DF",df);
 		add("NF",nf);
 		add("LF",lf);
+		add("DLF",dlf);
 		
 		
 	}

@@ -16,6 +16,8 @@ public class DramaVO {
 	private String date;
 	private String genre;
 	private String producer;
+	
+	
 	public int getMno() {
 		return mno;
 	}
@@ -88,6 +90,10 @@ public class DramaVO {
 	}
 	public void setProducer(String producer) {
 		this.producer = producer;
+	}
+	public String getDirector() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

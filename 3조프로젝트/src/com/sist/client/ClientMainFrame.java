@@ -81,6 +81,8 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		mf.b2.addActionListener(this); // 메뉴-영화찾기
 		mf.b5.addActionListener(this); // 메뉴-뉴스
 		
+		mf.b4.addActionListener(this); // 메뉴 - 드라마
+		
 		cp.ff.b1.addActionListener(this); // 컨트롤패널 - 이전
 		cp.ff.b2.addActionListener(this); // 컨트롤패널 - 다음
 		
@@ -93,6 +95,15 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		cp.lf.b5.addActionListener(this);
 		cp.lf.b6.addActionListener(this); // 리스트폼 - 검색버튼
 		cp.lf.tf.addActionListener(this); // 리스트폼 - 검색창 : 엔터치면 검색되는 기능 추가
+		
+		// 드라마
+		cp.dlf.b1.addActionListener(this); // 넷플릭스
+		cp.dlf.b2.addActionListener(this); // HBO
+		cp.dlf.b3.addActionListener(this); // Amazon Prime
+		cp.dlf.b4.addActionListener(this); // DISNEY+
+		cp.dlf.b5.addActionListener(this); // 검색버튼
+		cp.dlf.tf.addActionListener(this); // 검색창 : 엔터치면 검색되는 기능 추가
+		
 		
 		
 		
@@ -136,6 +147,12 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		else if(e.getSource()==mf.b5){
 			cp.card.show(cp,"NF");
 		}
+		
+		// 드라마 창으로 넘어가기
+		else if(e.getSource()==mf.b4) {
+			cp.card.show(cp, "DLF");
+		}
+		
 		
 		// 목록으로 
 		else if(e.getSource()==cp.df.b2){
@@ -200,6 +217,43 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			}
 			
 		}
+		
+		
+		// 드라마 방송국별로 넘어가기
+		else if(e.getSource()==cp.dlf.b1)
+		{
+			cp.dlf.dramaAllData(1);
+		}
+		else if(e.getSource()==cp.dlf.b2)
+		{
+			cp.dlf.dramaAllData(2);
+		}
+		else if(e.getSource()==cp.dlf.b3)
+		{
+			cp.dlf.dramaAllData(3);
+		}
+		else if(e.getSource()==cp.dlf.b4)
+		{
+			cp.dlf.dramaAllData(4);
+		}
+		
+		else if(e.getSource()==cp.dlf.b5 || e.getSource()==cp.dlf.tf)
+		{
+			//1. 입력된 값 읽기
+			String ss= cp.dlf.tf.getText();
+			if(ss.length()<1)
+			{
+				JOptionPane.showMessageDialog(this, "검색어를 입력해주세요");
+				cp.dlf.tf.requestFocus(); // 커서 깜빡이게 해주기
+				return; // 메소드 종료
+			}
+			else {
+				cp.dlf.dramaFindData(ss);
+			}
+			
+		}
+		
+		
 		
 		
 		

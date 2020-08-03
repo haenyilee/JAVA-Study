@@ -18,7 +18,7 @@ public class MenuForm extends JPanel{
 		b1=new JButton("홈");
 		b2=new JButton("영화찾기");
 		b3=new JButton("영화예매");
-		b4=new JButton("영화추천");
+		b4=new JButton("드라마"); // 원래 영화추천
 		b5=new JButton("뉴스");
 		b6=new JButton("영화뮤직");
 		b7=new JButton("종료");
