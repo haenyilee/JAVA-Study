@@ -20,15 +20,15 @@ public class DramaManager {
 				{
 						// 넷플릭스
 						"https://editorial.rottentomatoes.com/guide/best-netflix-shows-and-movies-to-binge-watch-now/", 
-						
-						// DISNEY+
-						//"https://editorial.rottentomatoes.com/guide/disney-plus-shows-and-movies-ranked-by-tomatometer/",
 					
 						// HBO
 						"https://editorial.rottentomatoes.com/guide/best-hbo-series-of-all-time-ranked/",
 						
 						// Amazon Prime
 						"https://editorial.rottentomatoes.com/guide/best-tv-shows-and-movies-original-to-amazon-prime-video/",
+						
+						// DISNEY+
+						"https://editorial.rottentomatoes.com/guide/disney-plus-shows-and-movies-ranked-by-tomatometer/",
 						
 						// BEST
 						// "https://editorial.rottentomatoes.com/guide/best-tv-shows-of-2020/"
@@ -38,13 +38,14 @@ public class DramaManager {
 				
 				};
 			
-			int mno=300;
+			int mno=91;
 			int cno=4;
 			
 			Document doc = Jsoup.connect("https://editorial.rottentomatoes.com/guide/disney-plus-shows-and-movies-ranked-by-tomatometer/").get();
 			Elements link = doc.select("div.article_movie_title a");
 			
 			for(int i=0;i<link.size();i++)
+			// for(int i=0;i<33;i++)
 			{
 				try {
 					
@@ -150,7 +151,7 @@ public class DramaManager {
 							+ producer+"\r\n";
 					
 					
-					FileWriter fw= new FileWriter("c:\\javaDev\\rotten_drama.txt",true);
+					FileWriter fw= new FileWriter("c:\\javaDev\\rotten_drama2.txt",true);
 					fw.write(msg);
 					fw.close();
 					

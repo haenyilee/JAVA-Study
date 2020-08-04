@@ -18,13 +18,13 @@ public class DramaDetailForm extends JPanel{
 	
 	public DramaDetailForm() {
 		setLayout(null);
-		poster.setBounds(10,15,350,400);
+		poster.setBounds(10,15,250,350);
 		add(poster);
 		
-		la1.setBounds(365,15,500,45);
+		la1.setBounds(265,15,500,45);
 		// la1.setOpaque(false);
 		// la1.setBackground(Color.BLUE);
-		la1.setFont(new Font("고딕체", Font.BOLD, 40));
+		la1.setFont(new Font("고딕체", Font.BOLD, 30));
 		add(la1);
 		
 		JPanel p =new JPanel();
@@ -33,19 +33,20 @@ public class DramaDetailForm extends JPanel{
 		for(int i=0;i<7;i++)
 		{
 			la[i]=new JLabel(str[i]);
-			la[i].setFont(new Font("고딕체",Font.BOLD,25));
+			la[i].setFont(new Font("고딕체",Font.BOLD,15));
 			p.add(la[i]);
 		}
 		
-		p.setBounds(365,80,500,300);
+		p.setBounds(265,80,450,300);
 		add(p);
 		
-		// 시놉시스 부분같은데,,,
+		// 시놉시스 부분
 		ta.setEditable(false);
 		JScrollPane js = new JScrollPane(ta);
-		js.setBounds(10,470,855,150);
+		js.setBounds(10,390,730,150);
 		add(js);
-	
+		
+		/*
 		b1=new JButton("예매하기");
 		b2=new JButton("목록으로");
 		b1.setBackground(Color.red);
@@ -54,6 +55,7 @@ public class DramaDetailForm extends JPanel{
 		p2.add(b2);
 		p2.setBounds(365,385,200,35);
 		add(p2);
+		*/
 	
 	}
 	

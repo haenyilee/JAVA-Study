@@ -23,6 +23,8 @@ package com.sist.client;
 
 import javax.print.DocFlavor.STRING;
 import javax.swing.*; // 윈도우창, 다이얼로그, 버튼 등의 기능을 가진 패키지
+import javax.swing.text.Style;
+import javax.swing.text.StyleContext;
 
 import com.sist.common.Function;
 
@@ -94,7 +96,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		setSize(1600,1000);
 		
 		// 윈도우 화면 보여주기
-		setVisible(true);
+		// setVisible(true);
 		
 		// X버튼 클릭 시 종료 => 이거 안하면 숨기기만 함
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); 
@@ -242,17 +244,17 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 					return;
 				}
 				String name=login.tf2.getText();
-				if(name.length()<1) // id를 입력하지 않은 경우
+				if(name.length()<1) // 대화명를 입력하지 않은 경우
 				{
 					JOptionPane.showMessageDialog(this, "대화명를 입력하세요");
 					login.tf2.requestFocus();
 					return;
 				}
 				String sex="";
-				if(login.rb1.isSelected())
-					sex="남자";
-				else
-					sex="여자";
+				if(login.rb1.isSelected()) {
+					sex="남자";}
+				else {
+					sex="여자";}
 				
 				// 서버로 입력받은 데이터 전송
 				try
@@ -278,6 +280,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		
 			else if(e.getSource()==cf.tf)
 			{
+				// String color=cf.box.getSelectedItem().toString();
 				String msg=cf.tf.getText();
 				if(msg.length()<1)
 					return;
@@ -292,7 +295,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			else if(e.getSource()==mf.b7)
 			{
 				try {
-					out.write((Function.EXIT+"\n").getBytes());
+					out.write((Function.EXIT+"|\n").getBytes());
 					
 				} catch (Exception e2) {}
 			}
@@ -316,8 +319,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 					int a=(i+1)+((curpage*10)-10);
 					// JOptionPane.showMessageDialog(this, "mno="+a);
 					cp.df.detailPrint(a);
-					cp.df.setVisible(true);
-					// cp.card.show(cp,"DF");
+					cp.card.show(cp, "DF"); //df를 cp위에 띄우기
 					break;
 				}
 			}
@@ -370,7 +372,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 				case Function.MYLOG:
 				{
 					setTitle(st.nextToken());
-					login.setVisible(false);// 로그인 창
+					login.setVisible(true);// 로그인 창
 					setVisible(true); // 영화창(Main)
 				}
 				break;
@@ -413,10 +415,10 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 
 				}
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		} catch (Exception e) {}
 		
 	}
+
+
 
 }

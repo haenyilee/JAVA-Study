@@ -26,9 +26,10 @@ public class Server implements Runnable{
 	
 	// 클라이언트가 접속 시마다 처리 기능
 	public void run() {
-		try {
-			while(true)
-			{
+		
+		while(true)
+		{
+			try {
 				// 발신자 정보(IP,PORT)를 가지고 있는 소켓
 				Socket s = ss.accept();
 					// 접속하면 쓰레드 생성해서 => 클라이언트마다 통신을 다르게 할 수 있게 만든다.
@@ -36,8 +37,14 @@ public class Server implements Runnable{
 				// 쓰레드와 연결 => 한사람하고만 통신이 가능함
 				 Client client = new Client(s);
 				 client.start(); // 토신을 시작
-			}
-		} catch (Exception e) {}
+			}catch (Exception e) {}
+		} 
+		
+	}
+    public static void main(String[] msg) {
+		
+		Server server = new Server(); // 서버가동
+		new Thread(server).start();  // 접속시까지 기다려라
 		
 	}
 	// 통신이 가능하게 만든다
@@ -93,12 +100,12 @@ public class Server implements Runnable{
 							// 화면 변경
 							// 로그인 => 대기실로
 							// Function.MYLOG : LOGIN테이블에 추가
-							messagTO(Function.MYLOG+"|"+id);
+							messageTO(Function.MYLOG+"|"+id);
 							
 							// 이미 접속한 사람들의 정보 받가
 							for(Client user:waitVc)
 							{
-								messagTO(Function.LOGIN+"|"+user.id+"|"+user.name+"|"+user.sex);
+								messageTO(Function.LOGIN+"|"+user.id+"|"+user.name+"|"+user.sex);
 							}
 				
 						
@@ -106,7 +113,7 @@ public class Server implements Runnable{
 						break;
 						case Function.CHAT:
 						{
-							messageAll(Function.CHAT+"|["+name+"]|"+st.nextToken());
+							messageAll(Function.CHAT+"|["+name+"]"+st.nextToken());
 						}
 						break;
 						case Function.EXIT:
@@ -120,8 +127,8 @@ public class Server implements Runnable{
 							{
 								if(user.id.equals(id))
 								{
-									messagTO(Function.MYEXIT+"|");
-									
+									messageTO(Function.MYEXIT+"|");
+									waitVc.remove(user);
 									// 통신을 중단
 									in.close();
 									out.close();
@@ -142,7 +149,7 @@ public class Server implements Runnable{
 			for(Client user:waitVc)
 			{
 				try {
-					user.messagTO(msg);
+					user.messageTO(msg);
 				}catch (Exception e) {
 					// 종료할 때, 빨강 x버튼 눌러서 나가면 삭제
 					waitVc.remove(user);
@@ -151,7 +158,7 @@ public class Server implements Runnable{
 			
 		}
 		// 개인적으로 메세지 전송
-		public void messagTO(String msg)
+		public void messageTO(String msg)
 		{
 			try {
 				out.write((msg+"\n").getBytes());
@@ -161,13 +168,7 @@ public class Server implements Runnable{
 		}
 	}
 
-	public static void main(String msg) {
-		
-		Server server = new Server(); // 서버가동
-		new Thread(server).start();  // 접속시까지 기다려라
-		
-
-	}
+	
 
 	
 
